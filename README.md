@@ -9,7 +9,7 @@
 
 </div>
 
-> **PROFESSIONAL REFACTOR:**
+> **REFACTOR:**
 > This repository contains the consolidated and refactored source code of my practical assignments for the **Computer Fundamentals** (1st Year, 2nd Quarter) and **Computer Architecture and Organization** (2nd Year, 1st Quarter) courses. 
 > The original legacy code has been translated to English, optimized for readability (Clean Code), and modularized to demonstrate advanced low-level programming concepts.
 
