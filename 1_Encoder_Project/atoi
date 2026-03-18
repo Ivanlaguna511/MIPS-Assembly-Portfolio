@@ -1,0 +1,71 @@
+# ---------------------------------------------------------
+# File: atoi.asm
+# Converts an ASCII string to a 32-bit integer.
+# Input:  $a0 -> Pointer to ASCII string
+# Output: $v0 -> Integer value
+#         $v1 -> Error code (0: OK, 1: Error)
+#         $a0 -> Pointer updated to the end of the number
+# ---------------------------------------------------------
+.text
+.globl atoi
+
+atoi: 
+    li $v0, 0           # Accumulated value
+    li $v1, 0           # Error code
+    li $t2, 10          # Multiplier
+    li $t9, 0           # Negative flag (0 = positive, 1 = negative)
+    li $t8, 0           # Digits parsed flag
+    
+atoi_loop:  
+    lb $t0, 0($a0)      # Load char
+    beqz $t0, atoi_end  # End of string
+    beq $t0, 10, atoi_end # End on newline
+    beq $t0, 32, handle_space # Space
+
+    # Check for signs
+    beq $t0, 45, handle_minus # '-'
+    beq $t0, 43, handle_plus  # '+'
+
+    # Check if char is a digit
+    blt $t0, '0', atoi_error
+    bgt $t0, '9', atoi_error
+
+    # It is a digit
+    li $t8, 1           # Set parsed flag
+    sub $t1, $t0, '0'   # Convert ASCII to integer
+    
+    # Accumulate: value = (value * 10) + digit
+    mul $v0, $v0, $t2
+    add $v0, $v0, $t1
+
+    addiu $a0, $a0, 1
+    j atoi_loop
+
+handle_space:
+    bnez $t8, atoi_end  # If we already parsed digits, space means end of number
+    addiu $a0, $a0, 1
+    j atoi_loop
+
+handle_minus:
+    bnez $t8, atoi_error # Sign cannot appear after digits
+    li $t9, 1           # Set negative flag
+    addiu $a0, $a0, 1
+    j atoi_loop
+
+handle_plus:
+    bnez $t8, atoi_error # Sign cannot appear after digits
+    addiu $a0, $a0, 1
+    j atoi_loop
+
+atoi_error:
+    li $v1, 1           # Set error code
+    jr $ra
+
+atoi_end:
+    beqz $t9, atoi_exit
+    # Apply negative sign (Two's complement)
+    xori $v0, $v0, 0xFFFFFFFF
+    addi $v0, $v0, 1    
+
+atoi_exit:
+    jr $ra

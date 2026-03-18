@@ -1,0 +1,10 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<pipeline tipo="simple" limite="100" ventana="20">
+    <forwarding>true</forwarding>
+    
+    <branches>ID</branches>
+    
+    <predictor>bit2</predictor>
+    
+    <predictor_entries>4</predictor_entries>
+</pipeline>
