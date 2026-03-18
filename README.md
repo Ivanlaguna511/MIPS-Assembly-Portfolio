@@ -48,10 +48,10 @@ cd MIPS-Assembly-Portfolio
 Download the MARS 4.5 Simulator (Requires Java to run).
 
 **3. Run the application:**
-### 1. Open the MARS.jar executable.
-### 2. Open any .asm file from the repository (e.g., 1_Encoder_Project/main.asm).
-### 3. Press F3 to Assemble the code.
-### 4. Press F5 to Execute the program.
+  1. Open the MARS.jar executable.
+  2. Open any .asm file from the repository (e.g., 1_Encoder_Project/main.asm).
+  3. Press F3 to Assemble the code.
+  4. Press F5 to Execute the program.
 
 **Original Authors**
 
