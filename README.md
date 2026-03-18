@@ -45,6 +45,7 @@ cd MIPS-Assembly-Portfolio
 ```
 
 **2. Download the Simulator:**
+
 Download the MARS 4.5 Simulator (Requires Java to run).
 
 **3. Run the application:**
