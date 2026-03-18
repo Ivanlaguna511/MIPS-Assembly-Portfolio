@@ -21,6 +21,8 @@ This repository serves as a comprehensive showcase of low-level algorithms and m
 
 Rather than relying on high-level abstractions, these projects require direct interaction with the CPU registers, manual stack frame allocation, dynamic memory traversal, and processor pipeline hazard management. The repository is divided into specialized sub-projects, including cryptographic encoders, complex 2D matrix operations, and mathematical generators.
 
+<img width="1912" height="1163" alt="image" src="https://github.com/user-attachments/assets/e96c0495-3db2-4e11-804c-8bf98ca5f1ae" />
+
 ### Tech Stack
 - **Language:** MIPS32 Assembly
 - **Environment/Simulator:** MARS (MIPS Assembler and Runtime Simulator) 4.5
