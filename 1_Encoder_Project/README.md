@@ -1,4 +1,4 @@
-### Encoder Project
+# Encoder Project
 
 <div align="center">
   
