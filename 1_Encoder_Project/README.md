@@ -19,8 +19,6 @@ The MIPS Command-Line Encoder is a robust application designed to parse user inp
 
 The main objective of this practice was to handle complex data structures in memory. Instead of passing variables through basic registers, the program builds a `conf_t` configuration object directly in the Stack Memory (`$sp`), passing memory pointers between the Lexical Parser and the Encryption Engine.
 
-<img width="1912" height="1163" alt="image" src="https://github.com/user-attachments/assets/b33d62bd-e4a9-4449-a697-9db61f1959bf" />
-
 ### Tech Stack
 - **Language:** MIPS32 Assembly
 - **Simulator:** MARS 4.5
